@@ -1,0 +1,19 @@
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.svg {
+    cursor: pointer;
+    width: 100%;
+    }
+  
+    .svgcontainer {
+      width: 100%;
+      padding: 0 3%;
+    }
+    
+  
