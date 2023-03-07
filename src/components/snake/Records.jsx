@@ -10,7 +10,7 @@ export default function RecordList() {
     async function getRecords() {
       try {
         // replace the XXXX below with domain name
-        const response = await axios.get(`https://XXXX/record`);
+        const response = await axios.get(`https://${process.env.REACT_APP_SERVER_DOMAIN}/record`);
         const data = response.data;
         if (data.length <= 10) {
           setList1(data);

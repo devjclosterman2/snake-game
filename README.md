@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Snake game built with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Over view
+### This README lays out the steps to deploy the front end of a sanke game onto Netlify.com. It also has a form the will send a notification to an email of your choosing. The back end can be found https://github.com/sobrien-banyan/snake-game-backend
 
-## Available Scripts
+## If you haven't done so fork both the front end and back end repos to your github account.
+https://github.com/sobrien-banyan/snake-game
 
-In the project directory, you can run:
+https://github.com/sobrien-banyan/snake-game-backend
 
-### `npm start`
+## Steps to deploy front end repo to [Netlify.com](https://www.netlify.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Log into or create a netlify account
+2. From the dashboard select `Add new site` and select from the dropdown `Import an existing project`
+3. Select `GitHub` and grant netlify permission to access your GitHub repo. Once permission is granted you should be on step two 'Pick a repository'. Pick the forked repo 'snake-game' from your github account.
+4. Select `Deploy site`. It will take time to deploy the site.
+5. Next we add the email address take will receive the form submition.
+- From the dashboard select the site you just deployed.
+- Select `Site settings`
+- From the left side nav section select `Forms` that will open more option below it and select `Form notifications`
+- Select `Add notification` and then select `Email notification`
+- Under `Email to notify` enter your email address
+- Under `Form` select from the dropdown `contact` and then select `Save`
+- Test it by going the site and submit the contact form. You should receive an email with the input form data.
+- F.Y.I. there is a hidden form in index.html thats connect the the Contact.jsx form that makes it work.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## To go forward you will need to deploy the back end repo: https://github.com/sobrien-banyan/snake-game-backend. Once you are done with deploying the back end, you will need to insert the server domain name into the .env file using netlify's dashboard.
 
-### `npm test`
+6. From the dashboard select the website.
+7. Select `Site settings`
+8. Select `Environment variables`
+9. Select `Add a variable`
+10. For the `Key` input enter `REACT_APP_SERVER_DOMAIN`
+11. For the `Values` input enter the domain for your backend server.
+12. Select `Create variable`
+13. The site needs to be redeplyed. Select the website from the dashboard. Select `Deploys`
+14. Select `Trigger deploy` then select `Deploy site`
+15. All done!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## The following steps are for using a custom domain name from namecheap for the application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+16. Register a domain name at [namecheap](https://www.namecheap.com/). Cost is a few dollor.
+17. Go to netlify, select the site and then select `Domains`
+18. Select `Add or register domain`
+19. For input `Domain of subdomain` enter the domain name from netlify and click `Verify`. You may be asked to Activate Netlify DNS.
+20. From `Domains` select the domain and it will take you to `DNS settings`. Find section `Name servers`. Copy the four name servers. They will look something like `dns.p01.nsone.net`. The name will need to by copied your namecheap account.
+21. Go to the namecheap dashboard. Select `Domain List`
+22. Find the domain name and select `Manage`
+23. Scroll down and find the `NAMESERVERS` section. Select `+ ADD NAMESERVER` and copy the 'Name servers' from Netlify one-by-one. e.g. `dns.p01.nsone.net` 
+24. All done!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

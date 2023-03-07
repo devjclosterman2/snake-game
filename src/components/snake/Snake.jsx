@@ -43,7 +43,7 @@ const Snake = () => {
             score: currentScore,
         };
         // replace the XXXX below with domain name
-        await axios.post(`https://XXXX/record/add`, body);
+        await axios.post(`https://${process.env.REACT_APP_SERVER_DOMAIN}/record/add`, body);
        
     };
 
